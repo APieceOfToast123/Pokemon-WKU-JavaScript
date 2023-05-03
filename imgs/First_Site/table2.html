@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <title>Table</title>
+</head>
+
+<style>
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px whitesmoke;
+
+        background-color: whitesmoke;
+        border: 2px solid black;
+        width: 50%;
+    }
+    .styled-table tr th{
+        border: 2px solid black;
+        background-color: limegreen;
+        color: aliceblue;
+        text-align: left;
+        font-size: 16px;
+    }
+    .styled-table th,
+    .styled-table td{
+        padding: 12px 15px;
+    }
+    .styled-table tbody tr{
+        border-bottom: 1px solid rgba(245, 245, 245, 0.788);
+    }
+    .styled-table tbody tr:nth-of-type(even){
+        background-color: rgb(249, 191, 123);
+    }
+    .styled-table tbody tr:last-of-type{
+        border-bottom: 1px solid rgba(245, 245, 245, 0.815);
+    }
+    .styled-table tbody tr.active-row{color: darkblue;}
+</style>
+
+<body>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dom</td>
+                <td>6000</td>
+            </tr>
+            <tr class="active-row">
+                <td>Melissa</td>
+                <td>5150</td>
+            </tr>
+            <tr>
+                <td>Dom</td>
+                <td>6000</td>
+            </tr>
+            <tr class="active-row">
+                <td>Melissa</td>
+                <td>5150</td>
+            </tr>            <tr>
+                <td>Dom</td>
+                <td>6000</td>
+            </tr>
+            <tr class="active-row">
+                <td>Melissa</td>
+                <td>5150</td>
+            </tr>            <tr>
+                <td>Dom</td>
+                <td>6000</td>
+            </tr>
+            <tr class="active-row">
+                <td>Melissa</td>
+                <td>5150</td>
+            </tr>
+            <!-- and so on... -->
+        </tbody>
+    </table>
+</body>
