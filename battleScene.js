@@ -34,8 +34,6 @@ function initBattle(){
         document.querySelector('#attackBox').append(button);
     });
 
-    console.log("Done")
-
     // Event listeners for attack buttons 
     document.querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', (e) => {
@@ -79,13 +77,13 @@ function animateBattle() {
     document.querySelector('#userInterface').style.display = 'block';
 }
 
+animate();
+// initBattle();
+// animateBattle();
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-// // animate();
-// initBattle();
-// animateBattle();
 
 // Event listeners for the dialogue box
 let inputEnable = true;
@@ -129,7 +127,6 @@ document.querySelector('#dialogueBox').addEventListener('click', (e) => {
                             gsap.to('#flash', {
                                 opacity: 0
                             })
-                            console.log("asdasd")
 
                             battle.initiated = false;
                         }
