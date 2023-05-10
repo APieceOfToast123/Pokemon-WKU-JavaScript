@@ -77,7 +77,7 @@ function animateBattle() {
     document.querySelector('#userInterface').style.display = 'block';
 }
 
-animate();
+// animate();
 // initBattle();
 // animateBattle();
 
