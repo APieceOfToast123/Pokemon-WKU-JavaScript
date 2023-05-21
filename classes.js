@@ -3,6 +3,7 @@ class Sprite {
         position, 
         image, 
         frames = { max: 1, hold: 30}, 
+        isVer2 = false,
         sprites, 
         isBG = false, 
         animate = false,
@@ -11,6 +12,10 @@ class Sprite {
         this.position = position;
         this.image = new Image();
         this.frames = { ...frames, val: 0, elapsed: 0 };
+        this.isVer2 = isVer2;
+        this.heightOffset = 1;
+        this.frameWOffset = 0;
+        this.frameHOffset = 0;
         this.isBG = isBG;
         this.image.onload = () => {
             this.width = this.image.width / this.frames.max;
@@ -30,6 +35,7 @@ class Sprite {
         c.rotate(this.rotation);
         c.translate(-this.position.x - this.width/2, -this.position.y - this.height/2);
         c.globalAlpha = this.opacity;
+
         if (this.isBG) {
             c.drawImage(
                 this.image,
@@ -42,17 +48,48 @@ class Sprite {
                 canvas.width,
                 canvas.height
             );
+        } else if(this.isVer2){
+            this.heightOffset = 4;
+            this.widthOffset = this.image.width / this.frames.max;
+            this.frameWOffset = this.image.width / this.frames.max;
+            if(this.isVer2){
+                if(this.frames.val >= 2){
+                    c.drawImage(
+                        this.image,
+                        0,
+                        this.frameHOffset * (this.image.width / this.frames.max),
+                        this.image.width / this.frames.max,
+                        this.image.height / 4,
+                        this.position.x,
+                        this.position.y + this.image.width / 4,
+                        this.image.width / this.frames.max,
+                        this.image.height / this.heightOffset
+                    );
+                } else{
+                    c.drawImage(
+                        this.image,
+                        this.frames.val * this.width + this.frameWOffset,
+                        this.frameHOffset * (this.image.width / this.frames.max),
+                        this.image.width / this.frames.max,
+                        this.image.height / 4,
+                        this.position.x,
+                        this.position.y + this.image.width / 4,
+                        this.image.width / this.frames.max,
+                        this.image.height / this.heightOffset
+                    );
+                }
+            }
         } else {
             c.drawImage(
                 this.image,
-                this.frames.val * this.width,
-                0,
+                this.frames.val * this.width + this.frameWOffset,
+                this.frameHOffset * (this.image.width / this.frames.max),
                 this.image.width / this.frames.max,
-                this.image.height,
+                this.image.height / this.heightOffset,
                 this.position.x,
                 this.position.y,
                 this.image.width / this.frames.max,
-                this.image.height
+                this.image.height / this.heightOffset
             );
         }
         c.restore();
@@ -84,6 +121,7 @@ class Monsters extends Sprite {
         frames = { max: 1, hold: 30}, 
         sprites, 
         isBG = false, 
+        isVer2 = false,
         animate = false,
         rotation = 0,
 
@@ -97,7 +135,8 @@ class Monsters extends Sprite {
             image, 
             frames, 
             sprites, 
-            isBG, 
+            isBG,
+            isVer2, 
             animate,
             rotation
         })

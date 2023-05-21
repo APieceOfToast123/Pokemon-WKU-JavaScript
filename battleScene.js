@@ -67,8 +67,8 @@ function initBattle(){
             document.querySelector('#attackType').style.fontSize = '3.2em';
             // document.querySelector('#attackDamage').innerHTML = "Damage: " + selectedAttack.damage;
             // document.querySelector('#attackDamage').style.fontSize = '2em';
-        })
-    })
+        });
+    });
 }
 
 function animateBattle() {
@@ -129,9 +129,13 @@ document.querySelector('#dialogueBox').addEventListener('click', (e) => {
                         onComplete: () => {
                             cancelAnimationFrame(battleAnimationId);
                             animate();
+                            location.reload();
                             document.querySelector('#userInterface').style.display = 'none';
                             gsap.to('#flash', {
-                                opacity: 0
+                                opacity: 0,
+                                onComplete: () =>{
+                                    location.reload();
+                                }
                             })
 
                             battle.initiated = false;
@@ -159,4 +163,4 @@ document.querySelector('#dialogueBox').addEventListener('click', (e) => {
             })
         }
     }
-})
+});
