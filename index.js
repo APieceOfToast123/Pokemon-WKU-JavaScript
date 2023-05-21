@@ -156,6 +156,7 @@ const battle = {
 function animate() {
     const animationId = window.requestAnimationFrame(animate);
     document.querySelector('#userInterface').style.display = 'none';
+    document.querySelector('#count').style.display = 'flex';
 
     background.draw();
     boundaries.forEach(boundary => {

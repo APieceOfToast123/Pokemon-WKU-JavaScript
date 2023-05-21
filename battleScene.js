@@ -10,6 +10,8 @@ const battleBackground = new Sprite({
     isBG: true
 });
 
+let count = 0;
+
 let draggle;
 let emby;
 let renderedSprites;
@@ -18,6 +20,7 @@ let queue;
 
 function initBattle(){
     document.querySelector('#userInterface').style.display = 'block';
+    document.querySelector('#count').style.display = 'none';
     document.querySelector('#dialogueBox').style.display = 'none';
     document.querySelector('#enemyHPBarG').style.width = '100%';
     document.querySelector('#playerHPBarG').style.width = '100%';
@@ -94,6 +97,9 @@ document.querySelector('#dialogueBox').addEventListener('click', (e) => {
         if (draggle.currentHP <= 0) {
             sleep(1000).then(() => {
                 draggle.faint();
+                // Count and add money $5
+                count += 1; 
+                document.querySelector('#countNum').innerHTML = 5 * count;
 
                 sleep(1000).then(() => {
                     gsap.to('#flash', {
