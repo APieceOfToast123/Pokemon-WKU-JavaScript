@@ -193,6 +193,10 @@ function animate() {
             ) {
                 //deactivate current animation loop
                 window.cancelAnimationFrame(animationId);
+
+                audio.Map.stop();
+                audio.initBattle.play();
+                audio.battle.play();
                 
                 battle.initiated = true;
 
@@ -206,6 +210,8 @@ function animate() {
                             opacity: 1,
                             duration: 0.18,
                             onComplete() {
+                                audio.initBattle.stop();
+                                audio.Map.play();
                                 //activate a new animation loop
                                 initBattle();
                                 animateBattle();
@@ -382,3 +388,11 @@ window.addEventListener('keyup', (e) => {
             break;
     }
 })
+
+let clicked = false;
+addEventListener('click', () => {
+    if(!clicked){
+        audio.Map.play();
+        clicked = true;
+    }
+});
