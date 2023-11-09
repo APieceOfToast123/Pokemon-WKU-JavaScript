@@ -17,9 +17,12 @@ Functions implemented:
 3. Battle scene, skill animation (Implemented By Javascript) and UI design
 <img width="1244" alt="c9c67280882b8e67f2d5c7cf6c1677d" src="https://github.com/APieceOfToast123/Pokemon-WKU/assets/121993898/392577d9-bcf5-41c2-8d8a-190d589397a5">
 
+<img width="1244" alt="1b57f5136e1be8428aa23459292ae29" src="https://github.com/APieceOfToast123/Pokemon-WKU/assets/121993898/01a47ed7-b107-4d74-90ad-5ce5ea29fe60">
+
 
 4. Faint scene
-<img width="1244" alt="1b57f5136e1be8428aa23459292ae29" src="https://github.com/APieceOfToast123/Pokemon-WKU/assets/121993898/01a47ed7-b107-4d74-90ad-5ce5ea29fe60">
+<img width="876" alt="1699521670258" src="https://github.com/APieceOfToast123/Pokemon-WKU-JavaScript/assets/121993898/f22c138c-97a4-474e-89e0-4e445434610c">
+
 
 
 5. Coins increase per battle
